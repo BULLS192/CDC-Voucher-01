@@ -2,6 +2,20 @@
 
 A categorized, searchable directory of CDC voucher hawker and heartland merchants in Singapore, based on the official [GoWhere directory](https://www.gowhere.gov.sg/cdcvouchers).
 
+## Open the search app
+
+**[CDC Voucher Finder SG — live search app](https://cdc-voucher-finder-sg.airycoot16.chatgpt.site)**
+
+The responsive website searches the **25,822-outlet snapshot (18 October 2026)** by merchant name, food/shop keyword, street/address, postal code or sector. Browse 17 mapped categories plus Unclassified, filter GoWhere-marked budget meals, sort, and open map links. The hosted website is **currently private to its owner**; it is not a public GitHub Pages deployment.
+
+The reproducible static app source lives in `web/` and the compact-data builder in `scripts/build-app-data.py`. To prepare a local standalone copy after generating the enriched CSV:
+
+```bash
+python3 scripts/build-app-data.py --input cdc-merchants-enriched.csv --output web/merchants.json
+```
+
+Then serve `web/` from a static HTTP server. The generated snapshot is not committed to this repo; the published website bundles a dated snapshot. The app is an independent community tool, not an official live voucher eligibility checker.
+
 ## Browse the directory
 
 **[Open the Google Sheet — 25,822 outlet records, 18 October 2026](https://docs.google.com/spreadsheets/d/1F-ooGv1LLRclS0br7xPMcsu1GCh7-l8j7IwMN_tAvJs/edit)**
