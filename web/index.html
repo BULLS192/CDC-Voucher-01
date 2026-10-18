@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-SG">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a373a">
+  <meta name="description" content="Discover Singapore CDC voucher hawker and heartland merchants by name, category, postal code and area.">
+  <title>CDC Voucher Finder SG — Search shops near you</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark"><span class="brand-symbol" aria-hidden="true">✳</span><span>CDC<span class="brand-accent">Finder</span><small>SG</small></span></div>
+      <a class="top-link" href="https://www.gowhere.gov.sg/cdcvouchers" target="_blank" rel="noopener noreferrer">Official GoWhere <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-text">
+          <div class="eyebrow"><span class="status-dot"></span> Singapore · Hawker & heartland merchants</div>
+          <h1 id="hero-title">Your vouchers.<br><em>More places to love.</em></h1>
+          <p>Find where to eat, shop and spend your CDC vouchers — without searching through thousands of rows.</p>
+          <div class="hero-stats" aria-label="Directory snapshot">
+            <div><strong id="merchant-count">25,822</strong><span>outlet listings</span></div>
+            <div class="stat-rule"></div>
+            <div><strong id="category-count">17</strong><span>shopping categories</span></div>
+            <div class="stat-rule"></div>
+            <div><strong id="data-date">18 Oct 2026</strong><span>snapshot date</span></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="voucher-card">
+            <div class="voucher-top"><span>GOOD THINGS, CLOSE BY</span><span>✳</span></div>
+            <div class="voucher-figure">SG<span>.</span></div>
+            <div class="voucher-bottom"><span>Explore your neighbourhood</span><span class="barcode">|||| ||| |||| |</span></div>
+          </div>
+          <div class="float-bubble bubble-one">🍜 <span>Eat local</span></div>
+          <div class="float-bubble bubble-two">🛍️ <span>Shop nearby</span></div>
+        </div>
+      </section>
+
+      <section class="finder" aria-labelledby="finder-title">
+        <div class="section-head">
+          <div><div class="small-label">THE DIRECTORY</div><h2 id="finder-title">Where would you like to go?</h2></div>
+          <span class="source-pill" id="source-badge">Loading directory…</span>
+        </div>
+
+        <div class="search-card">
+          <label class="sr-only" for="merchant-search">Search shop name, food or address</label>
+          <div class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 4.5 4.5"/></svg><input id="merchant-search" type="search" placeholder="Try ‘chicken rice’, ‘Mr Bean’, or ‘Bedok’…" autocomplete="off" spellcheck="false"><kbd>/</kbd></div>
+          <div class="filter-grid">
+            <label class="filter-control"><span>Category</span><select id="category-select"><option value="">All categories</option></select></label>
+            <label class="filter-control"><span>Postal code / area</span><input id="area-input" type="text" placeholder="e.g. 53, 560123, Tampines" autocomplete="off" maxlength="40"></label>
+            <label class="filter-control"><span>Sort results</span><select id="sort-select"><option value="relevance">Best match</option><option value="name">Name A–Z</option><option value="category">Category A–Z</option></select></label>
+            <label class="check-control"><input type="checkbox" id="budget-only"><span class="fake-checkbox" aria-hidden="true">✓</span><span>Budget meals only <small>GoWhere marked</small></span></label>
+          </div>
+          <div class="quick-category"><span>Popular:</span><div id="category-chips" class="chip-list" aria-label="Quick category filters"></div></div>
+        </div>
+
+        <div class="results-bar"><div><strong id="results-count">Finding merchants…</strong><span id="results-hint">Search the directory to get started</span></div><button id="reset-btn" type="button" class="text-button" hidden>Clear filters ↺</button></div>
+        <div id="loading" class="state-card"><div class="spinner"></div><p>Preparing your merchant directory…</p></div>
+        <div id="error" class="state-card" hidden><div class="state-icon">!</div><h3>Directory unavailable right now</h3><p>We couldn’t load this data snapshot. Please try again or use the official GoWhere search.</p><button id="retry-btn" class="primary-button">Try again</button></div>
+        <div id="empty" class="state-card" hidden><div class="state-icon">⌕</div><h3>No matches found</h3><p>Try a shorter name, a nearby postal sector, or a different category.</p><button id="empty-reset-btn" class="primary-button">Show all merchants</button></div>
+        <div id="results-list" class="results-grid" aria-live="polite" aria-relevant="additions text"></div>
+        <div class="more-wrap"><button type="button" id="more-btn" class="more-button" hidden>Show more places <span aria-hidden="true">↓</span></button></div>
+      </section>
+
+      <section class="info-strip"><div class="info-icon">i</div><div><strong>A helpful guide, not an official classification.</strong><p>Shop categories are estimates based on merchant names and known patterns. Ambiguous listings stay <b>Unclassified</b>; possible machine-generated suggestions are marked separately. Check the <a href="https://www.gowhere.gov.sg/cdcvouchers" target="_blank" rel="noopener noreferrer">official GoWhere directory</a> before making a trip. This snapshot covers the hawker and heartland merchant directory, not supermarket voucher partners.</p></div></section>
+    </main>
+
+    <footer><span><span class="footer-star">✳</span> Made for everyday Singapore discoveries.</span><span>Independent community directory · <a href="https://github.com/BULLS192/CDC-Voucher-01" target="_blank" rel="noopener noreferrer">GitHub ↗</a> · <a href="https://docs.google.com/spreadsheets/d/1F-ooGv1LLRclS0br7xPMcsu1GCh7-l8j7IwMN_tAvJs/edit" target="_blank" rel="noopener noreferrer">Google Sheet ↗</a></span></footer>
+  </div>
+</body>
+</html>
