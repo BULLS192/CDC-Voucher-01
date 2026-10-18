@@ -6,7 +6,7 @@ A categorized, searchable directory of CDC voucher hawker and heartland merchant
 
 **[CDC Voucher Finder SG — live search app](https://cdc-voucher-finder-sg.airycoot16.chatgpt.site)**
 
-The responsive website searches the **25,822-outlet snapshot (18 October 2026)** by merchant name, food/shop keyword, street/address, postal code or sector. Browse 17 mapped categories plus Unclassified, filter GoWhere-marked budget meals, sort, and open map links. The hosted website is **currently private to its owner**; it is not a public GitHub Pages deployment.
+The responsive website searches the **25,822-outlet snapshot (18 October 2026)** by merchant name, food/shop keyword, street/address, postal code or sector. Browse 17 mapped categories plus Unclassified, filter GoWhere-marked budget meals, sort, and open map links. The hosted website is **public and shareable without a ChatGPT account**. It is currently deployed on ChatGPT Sites, not GitHub Pages.
 
 The reproducible static app source lives in `web/` and the compact-data builder in `scripts/build-app-data.py`. To prepare a local standalone copy after generating the enriched CSV:
 
