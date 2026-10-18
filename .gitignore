@@ -1,0 +1,7 @@
+# Generated merchant data and snapshots
+cdc-merchants.csv
+*.csv
+/data/
+*.gzip
+node_modules/
+.DS_Store
